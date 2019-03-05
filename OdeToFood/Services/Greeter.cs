@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 
-namespace OdeToFood
+namespace OdeToFood.Services
 {
     public class Greeter: IGreeter
     {
