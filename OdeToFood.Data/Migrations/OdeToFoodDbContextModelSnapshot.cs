@@ -33,6 +33,20 @@ namespace OdeToFood.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Restaurants");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Cuisine = 1,
+                            Name = "Pxl's Pizza Place"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Cuisine = 2,
+                            Name = "a Cesar"
+                        });
                 });
 #pragma warning restore 612, 618
         }

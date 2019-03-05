@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace OdeToFood.Data.Migrations
 {
-    public partial class initialmigration : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -20,6 +20,16 @@ namespace OdeToFood.Data.Migrations
                 {
                     table.PrimaryKey("PK_Restaurants", x => x.Id);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Restaurants",
+                columns: new[] { "Id", "Cuisine", "Name" },
+                values: new object[] { 1, 1, "Pxl's Pizza Place" });
+
+            migrationBuilder.InsertData(
+                table: "Restaurants",
+                columns: new[] { "Id", "Cuisine", "Name" },
+                values: new object[] { 2, 2, "a Cesar" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
