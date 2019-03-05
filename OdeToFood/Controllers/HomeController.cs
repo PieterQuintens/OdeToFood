@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using OdeToFood.Models;
 using OdeToFood.Services;
 using OdeToFood.ViewModels;
+using IRestaurantData = OdeToFood.Data.Interfaces.IRestaurantData;
 
 namespace OdeToFood.Controllers
 {
