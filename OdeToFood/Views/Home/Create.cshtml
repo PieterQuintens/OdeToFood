@@ -1,0 +1,47 @@
+﻿@using OdeToFood.Models
+@model Restaurant
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+    <div>
+        <h1>Create</h1>
+        <form method="post">
+            @*<input type="text" name="Name" value="" />*@
+            <div>
+                <label asp-for="Name"></label>
+                <input asp-for="Name" />
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div>
+                <label asp-for="Cuisine"></label>
+                <select asp-for="Cuisine"
+                        asp-items="@Html.GetEnumSelectList(typeof(CuisineType))"></select>
+                <span asp-validation-for="Cuisine"></span>
+            </div>
+            <input type="submit" name="save" value="Save" />
+            <div asp-validation-summary="All"></div>
+        </form>
+        @* Alternative way (slides) *@
+        @*<h1>Create</h1>
+        @using (Html.BeginForm())
+        {
+            <div>
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name)
+            </div>
+            <div>
+                @Html.LabelFor(m => m.Cuisine)
+                @Html.DropDownListFor(m => m.Cuisine, Html.GetEnumSelectList(typeof(CuisineType)))
+            </div>
+            <div>
+                <input type="submit" value="Save" />
+            </div>
+        }*@
+    </div>
+</body>
+</html>

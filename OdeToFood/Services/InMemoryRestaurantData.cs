@@ -26,5 +26,18 @@ namespace OdeToFood.Services
             // (not threadsafe)
             return _restaurants.OrderBy(r => r.Name);
         }
+
+        public Restaurant Get(int id)
+        {
+            return _restaurants.FirstOrDefault(r => r.Id == id);
+        }
+
+        public Restaurant Add(Restaurant restaurant)
+        {
+            // Give an id only because it's an in-memory database
+            restaurant.Id = _restaurants.Max(r => r.Id) + 1;
+            _restaurants.Add(restaurant);
+            return restaurant;
+        }
     }
 }
